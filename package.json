@@ -1,0 +1,23 @@
+{
+  "name": "node-simple-geo",
+  "version": "1.0.0",
+  "description": "Sample application with geo reference in node + mongodb.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+      "express": "4.13.1",
+      "body-parser": "1.14.2",
+      "path": "0.12.7",
+      "mongoose" : "4.3.7",
+      "mongodb" : "2.1.4"
+  },
+  "author": "Uilian Souza",
+   "license": "MIT",
+   "repository": {
+      "type": "git",
+      "url": "https://github.com/uilian/node-simple-geo.git"
+   },
+   "homepage": "https://github.com/uilian/node-simple-geo.git"
+}

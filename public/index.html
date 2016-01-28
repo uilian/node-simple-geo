@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Teste API</title>
+   <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+   <link rel="stylesheet" href="css/leaflet.extra-markers.min.css">
+   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.css" />
+</head>
+<body>
+   <div class="container">
+      <div class="row">
+         <h2>Free wifi spots in Porto Alegre</h2>
+         <div class="form-group">
+            <label for="radius" class=" control-label">Search radius (in Km): </label>
+            <input type="number" class="form-control"  style="width:150px;" id="radius" value="10" placeholder="Ex: 10" />
+         </div>
+
+         <div id="map" class="map" style="height:500px;"></div>
+      </div>
+   </div>
+   <footer> 
+      <div class="container"> 
+         <p>Simple NodeJS and Mongo application created by <a href="http://www.uilian.com/about" target="_blank">@uilian</a> to test geoprocessing features.</p> 
+         <p>Code licensed <a rel="license" href="https://github.com/twbs/bootstrap/blob/master/LICENSE" target="_blank">MIT</a>, docs <a rel="license" href="https://creativecommons.org/licenses/by/3.0/" target="_blank">CC BY 3.0</a>.</p> 
+      </div> 
+   </footer>
+   
+   <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>      
+   <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+   <script src="js/leaflet.extra-markers.min.js"></script> 
+   <script src="js/map.js"></script> 
+   <script>
+      (function(){
+         init();
+      })();
+  </script>   
+</body>
+</html>
