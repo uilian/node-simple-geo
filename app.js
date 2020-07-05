@@ -1,8 +1,12 @@
 var express = require('express');
 var path = require('path');
 var bodyParser = require('body-parser');
-var app = express();
+const logger = require('./config/logger');
+const morgan = require('morgan');
 
+const app = express();
+
+app.use(morgan('combined', {stream: logger.stream}));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public'))); 
@@ -14,5 +18,5 @@ app.use('/', index);
 app.use('/api', apiV1);
  
 var server = app.listen(3000, function () {
-   console.log('Listening on port %s...', server.address().port);
+   logger.info(`Listening on port ${server.address().port} ...`);
 });

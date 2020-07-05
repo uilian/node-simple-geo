@@ -1,7 +1,8 @@
 const express = require('express');
 const router = express.Router();
-
 const hotspotsController = require('../../controllers/v1/hotspots');
+
+var url = '';
 
 /* Variable initialization and follow to next middleware  */
 router.use(function(req, res, next) {

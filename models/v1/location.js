@@ -2,18 +2,18 @@ var mongoose = require('mongoose');
 var db = require('../../config/database');
 
 var locationSchema = new mongoose.Schema({
-      nome: String,
-      endereco: String,
-      local: {
-         type: [Number],   // [ <longitude> , <latitude> ]
-         index: '2d'       // geospatial index
-      },
-      setor: String
-   }, 
-   { collection : 'wifi_hotspots' }
+   nome: String,
+   endereco: String,
+   local: {
+      type: [Number],   // [ <longitude> , <latitude> ]
+      index: '2d'       // geospatial index
+   },
+   setor: String
+}, 
+{ collection : 'wifi_hotspots' }
 );
 
-location = mongoose.model('location', locationSchema);
+const location = mongoose.model('location', locationSchema);
 
 module.exports = {
    filterByGeolocation: (filters, callback) => {
@@ -30,7 +30,7 @@ module.exports = {
       });
    },
    create: (inputData, callback) => {
-      wifiData = new location(inputData);
+      const wifiData = new location(inputData);
       wifiData.save((err, data) => {
          if (err) 
             throw err;
