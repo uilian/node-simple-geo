@@ -10,14 +10,13 @@ function init(){
 
    L.marker(POA, {
           icon: L.ExtraMarkers.icon({
-              icon: 'fa-wifi',
+              icon: 'fa-search',
               shape: 'circle',
               markerColor: 'red',
-              prefix: 'fa',
-              extraClasses: 'fa-pulse'
+              prefix: 'fa'
           })})
       .addTo(map)
-      .bindPopup('<b>Free Wifi, woot!!!</b>.');         
+      .bindPopup('Click anywhere in the map to see the closest wifi hotspots!');         
 
    var popup = L.popup();
    function onMapClick(e) {
@@ -48,9 +47,9 @@ function initMapbox(){
 }
 
 
-/* Submits search to DB and add the result to the map. */
+/* Submits search to REST service and add the result to the map. */
 function getSpots(e) {
-   var baseUrl="/wifi/spots?latitude=";
+   var baseUrl="/api/v1/hotspots?latitude=";
    var url= baseUrl + e.latlng.lat;
    url+= "&longitude="+ e.latlng.lng + "&distance=" + $('#radius').val();
    $.getJSON(url, 

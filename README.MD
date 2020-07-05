@@ -6,23 +6,30 @@ Sample NodeJS application to test geo features of MongoDB, using LeafletJS, Open
 
 What you'll need:
 
-- MongoDB
-- NodeJS
-- Express
+- MongoDB (or docker / docker-compose)
+- Node
 
-### Creating the geodatabase
+### Importing your date to mongodb:
 
-Simply run the "loadpoints.js" script:
-
-```
-$ node loadpoints.js
-```
-
-It assumes your mongodb is up and running on the default port:
+Run the script ```init-db.js```:
 
 ```
-mongodb://localhost:27017/sampledb
+$ node config/init-db.js
 ```
+
+It assumes that you have mongodb up and running on the default port:
+
+```
+mongodb://localhost:27017
+```
+
+If you don't have a mongo db, there is one configured, you just need to execute ```docker-compose```:
+
+```
+$ docker-compose up -d
+```
+
+After running this script, you will have a collection called ```wifi_hotspots``` under a ```geodb``` database.
 
 ### Running the application
 
@@ -30,9 +37,11 @@ In the application directory:
 
 ```
 $ npm install
-$ node app.js
+$ npm start
 ```
 
-Open your browser in [http://localhost:3000/][http://localhost:3000/].
+Open your browser in [http://localhost:3000/](http://localhost:3000/)
 
 That's it!
+
+
